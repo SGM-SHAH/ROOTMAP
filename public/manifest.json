@@ -1,0 +1,17 @@
+{
+  "name": "Political Directory of India - States and Union Territories",
+  "short_name": "Civic Atlas",
+  "description": "Non-partisan civic reference and administrative atlas of India's 28 States and 8 Union Territories.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF8F5",
+  "theme_color": "#1E3A8A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

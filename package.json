@@ -1,0 +1,29 @@
+{
+  "name": "india-3d-political-map",
+  "version": "1.0.0",
+  "description": "Interactive 3D Political Map of India with Three.js, React, and Tailwind CSS",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "node scripts/generate-sitemap.cjs && node scripts/generate-og-images.cjs && vite build && node scripts/generate-prerendered-pages.cjs && node build-standalone.cjs",
+    "preview": "vite preview",
+    "test": "node scripts/validate-data.cjs",
+    "deploy": "npm test && npm run build && firebase deploy --only hosting"
+  },
+  "dependencies": {
+    "d3-geo": "^3.1.2",
+    "lucide-react": "^1.70.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.2.1",
+    "autoprefixer": "^10.6.2",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^3.4.19",
+    "vite": "^8.3.6",
+    "vite-plugin-singlefile": "^2.1.2"
+  }
+}
