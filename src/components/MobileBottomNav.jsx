@@ -40,7 +40,7 @@ export default function MobileBottomNav({
       {/* Persistent Thumb-Friendly Mobile Bottom Navigation Bar */}
       <nav 
         aria-label="Mobile Navigation"
-        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-parchment-border dark:border-slate-800 pb-[env(safe-area-inset-bottom)] shadow-float"
+        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white dark:bg-slate-900 border-t border-parchment-border dark:border-slate-800 pb-[env(safe-area-inset-bottom)] shadow-float"
       >
         <div className="grid grid-cols-4 h-14">
           
@@ -116,7 +116,7 @@ export default function MobileBottomNav({
       {/* Mobile Trust & Actions Bottom Sheet */}
       {isTrustSheetOpen && (
         <div 
-          className="md:hidden fixed inset-0 z-50 flex flex-col justify-end bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-200"
+          className="md:hidden fixed inset-0 z-50 flex flex-col justify-end bg-slate-900/75 animate-in fade-in duration-200"
           role="dialog"
           aria-modal="true"
           aria-labelledby="mobile-trust-sheet-title"

@@ -3,7 +3,7 @@ import {
   Building2, Users, MapPin, Crown, Landmark, BookOpen, 
   Shield, Compass, Award, Info, ChevronLeft, Search, 
   ChevronRight, History, UserCheck, ChevronDown, ChevronUp,
-  Sparkles, Tag, SearchX, Share2, Scale, MessageSquarePlus,
+  Tag, SearchX, Share2, Scale, MessageSquarePlus,
   Check, ExternalLink, HelpCircle
 } from 'lucide-react';
 import DistrictSpecialModal from './DistrictSpecialModal';
@@ -174,7 +174,7 @@ export default function StateDetailView({
       className="flex-1 flex flex-col h-full min-h-0 min-w-0 overflow-hidden max-w-full bg-white dark:bg-slate-900"
     >
       {/* Top Profile Header - Streamlined, Compact & Information-Dense */}
-      <header className="p-3 sm:p-4 border-b border-parchment-border dark:border-slate-800 bg-parchment/80 dark:bg-slate-900/80 backdrop-blur-xs shrink-0 max-w-full min-w-0 overflow-hidden">
+      <header className="p-3 sm:p-4 border-b border-parchment-border dark:border-slate-800 bg-parchment dark:bg-slate-900 shrink-0 max-w-full min-w-0 overflow-hidden">
         
         {/* Mobile Back Button */}
         <button
@@ -249,15 +249,13 @@ export default function StateDetailView({
 
             {/* Direct Executive Leadership Line (Immediately Visible in Header) */}
             <div className="flex items-center gap-3 mt-1 text-xs text-ink-muted flex-wrap">
-              <div className="flex items-center gap-1.5 shrink-0">
-                <Building2 className="w-3.5 h-3.5 text-carto-gold shrink-0" aria-hidden="true" />
+              <div className="flex items-center gap-1 shrink-0">
                 <span>{language === 'hi' ? 'राजधानी:' : 'Capital:'}</span>
                 <strong className="text-ink dark:text-ink-dark font-semibold">{displayCapital}</strong>
               </div>
 
               {/* Chief Minister or Governor/Administrator - ALWAYS VISIBLE */}
-              <div className="flex items-center gap-1.5 shrink-0">
-                <Crown className="w-3.5 h-3.5 text-amber-600 shrink-0" aria-hidden="true" />
+              <div className="flex items-center gap-1 shrink-0">
                 <span>
                   {selectedItem.chiefMinister?.name 
                     ? (language === 'hi' ? 'मुख्यमंत्री:' : 'CM:') 
@@ -275,8 +273,7 @@ export default function StateDetailView({
               </div>
 
               {selectedItem.highCourt && (
-                <div className="flex items-center gap-1.5 shrink-0" title={`High Court Jurisdiction: ${selectedItem.highCourt}`}>
-                  <Landmark className="w-3.5 h-3.5 text-slate-400 shrink-0" aria-hidden="true" />
+                <div className="flex items-center gap-1 shrink-0" title={`High Court Jurisdiction: ${selectedItem.highCourt}`}>
                   <span>{language === 'hi' ? 'न्यायपालिका:' : 'Judiciary:'}</span>
                   <strong className="text-ink dark:text-ink-dark font-semibold whitespace-normal">{selectedItem.highCourt}</strong>
                 </div>
@@ -348,7 +345,6 @@ export default function StateDetailView({
                   : 'border-transparent text-ink-muted hover:text-ink dark:hover:text-ink-dark'
               }`}
             >
-              <MapPin className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
               <span>{language === 'hi' ? 'जिले' : 'Districts'} ({districtCount})</span>
             </button>
 
@@ -363,7 +359,6 @@ export default function StateDetailView({
                   : 'border-transparent text-ink-muted hover:text-ink dark:hover:text-ink-dark'
               }`}
             >
-              <Crown className="w-3.5 h-3.5 shrink-0 text-amber-600" aria-hidden="true" />
               <span>
                 {hasLegislature 
                   ? (language === 'hi' ? 'कार्यकारी मंत्रिमंडल' : 'Executive Cabinet') 
@@ -382,7 +377,6 @@ export default function StateDetailView({
                   : 'border-transparent text-ink-muted hover:text-ink dark:hover:text-ink-dark'
               }`}
             >
-              <Landmark className="w-3.5 h-3.5 shrink-0 text-carto-gold" aria-hidden="true" />
               <span>{language === 'hi' ? 'संवैधानिक एवं सांख्यिकी' : 'Demographics'}</span>
             </button>
 
@@ -397,7 +391,6 @@ export default function StateDetailView({
                   : 'border-transparent text-ink-muted hover:text-ink dark:hover:text-ink-dark'
               }`}
             >
-              <BookOpen className="w-3.5 h-3.5 shrink-0 text-slate-400" aria-hidden="true" />
               <span>{language === 'hi' ? 'शैक्षणिक तथ्य' : 'Notes'}</span>
             </button>
           </div>
@@ -545,8 +538,8 @@ export default function StateDetailView({
               )}
             </div>
 
-            {/* Reduced Density Districts Grid: Name, HQ, 1-line description, max 2 tags */}
-            <div className={`grid gap-2.5 ${isCompact ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 sm:grid-cols-2 xl:grid-cols-3'}`}>
+            {/* Clean 2-Column Districts Directory: Name, HQ, 1-line description, max 2 tags */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {filteredDistricts.length > 0 ? (
                 filteredDistricts.map((district, idx) => (
                   <div
@@ -561,7 +554,7 @@ export default function StateDetailView({
                         setSelectedDistrictForModal(district);
                       }
                     }}
-                    className="p-3 rounded-xl bg-white dark:bg-slate-800 border border-parchment-border dark:border-slate-700 hover:border-carto-indigo dark:hover:border-blue-400 hover:shadow-card transition-all flex flex-col justify-between space-y-2 group shadow-2xs cursor-pointer text-left focus-visible:ring-2 focus-visible:ring-carto-indigo min-w-0 max-w-full overflow-hidden"
+                    className="p-3 rounded-xl bg-white dark:bg-slate-800 border border-parchment-border dark:border-slate-700 hover:border-carto-indigo dark:hover:border-blue-400 transition-colors flex flex-col justify-between space-y-2 group shadow-2xs cursor-pointer text-left focus-visible:ring-2 focus-visible:ring-carto-indigo min-w-0 max-w-full overflow-hidden"
                   >
                     <div>
                       <div className="flex items-start justify-between gap-1.5 mb-1">
@@ -577,7 +570,6 @@ export default function StateDetailView({
 
                       {/* HQ line */}
                       <div className="flex items-center gap-1.5 text-xs text-ink-muted mb-1.5">
-                        <Building2 className="w-3.5 h-3.5 text-slate-400 shrink-0" aria-hidden="true" />
                         <span>HQ: <strong>{district.hq || district.name}</strong></span>
                         {district.division && (
                           <>
@@ -926,7 +918,7 @@ export default function StateDetailView({
                     className="mt-3 text-xs text-carto-indigo dark:text-blue-400 hover:underline font-semibold flex items-center gap-1 group"
                   >
                     <span>Read Full 7th Schedule Constitutional Explainer</span>
-                    <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                    <ChevronRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
@@ -966,10 +958,8 @@ export default function StateDetailView({
                     {pastCMs.map((past, idx) => (
                       <div
                         key={idx}
-                        className="p-3.5 rounded-lg bg-parchment/60 dark:bg-slate-900 border border-parchment-border dark:border-slate-700 relative pl-4 hover:border-slate-400 transition-all"
+                        className="p-3.5 rounded-lg bg-parchment/60 dark:bg-slate-900 border border-parchment-border dark:border-slate-700 hover:border-slate-400 transition-all"
                       >
-                        <div className="absolute left-0 top-3 bottom-3 w-1 bg-carto-indigo rounded-r" />
-
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-1.5">
                           <div className="flex items-center gap-2 flex-wrap">
                             <span className="text-xs font-serif font-bold text-ink dark:text-ink-dark">
@@ -1067,7 +1057,7 @@ export default function StateDetailView({
                 </div>
 
                 <div className="p-3 rounded-lg bg-parchment/60 dark:bg-slate-900 border border-parchment-border dark:border-slate-700">
-                  <span className="text-[10px] font-sans uppercase text-purple-700 dark:text-purple-400 font-bold block mb-1">
+                  <span className="text-[10px] font-sans uppercase text-carto-indigo dark:text-blue-400 font-bold block mb-1">
                     Legislative Council
                   </span>
                   <div className="font-mono font-bold text-xl text-ink dark:text-ink-dark">

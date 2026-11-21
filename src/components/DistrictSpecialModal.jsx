@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Building2, MapPin, Sparkles, Tag, Compass, Landmark, CheckCircle2, Calendar, Users, Layers, ExternalLink } from 'lucide-react';
+import { X, Building2, MapPin, Tag, Compass, Landmark, CheckCircle2, Calendar, Users, Layers, ExternalLink } from 'lucide-react';
 
 export default function DistrictSpecialModal({ district, stateName, onClose }) {
   if (!district) return null;
@@ -25,7 +25,7 @@ export default function DistrictSpecialModal({ district, stateName, onClose }) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-900/50 backdrop-blur-xs animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-900/60 animate-in fade-in duration-150"
       role="dialog"
       aria-modal="true"
       aria-labelledby="district-modal-title"
@@ -77,16 +77,13 @@ export default function DistrictSpecialModal({ district, stateName, onClose }) {
           
           {/* Prominent Moniker Banner */}
           {district.knownAs && (
-            <div className="p-3.5 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200/80 dark:border-blue-800 flex items-start gap-2.5">
-              <Sparkles className="w-4 h-4 text-carto-gold shrink-0 mt-0.5" aria-hidden="true" />
-              <div>
-                <span className="text-[10px] uppercase font-sans font-bold text-carto-indigo dark:text-blue-300 block tracking-wider">
-                  Special Moniker
-                </span>
-                <p className="text-sm font-serif font-bold text-carto-indigo dark:text-blue-100 mt-0.5">
-                  {district.knownAs}
-                </p>
-              </div>
+            <div className="p-3.5 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200/80 dark:border-blue-800">
+              <span className="text-[10px] uppercase font-sans font-bold text-carto-indigo dark:text-blue-300 block tracking-wider">
+                Special Moniker
+              </span>
+              <p className="text-sm font-serif font-bold text-carto-indigo dark:text-blue-100 mt-0.5">
+                {district.knownAs}
+              </p>
             </div>
           )}
 

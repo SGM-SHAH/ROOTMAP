@@ -402,11 +402,6 @@ export default function StateList({
                     : 'bg-white dark:bg-slate-800/80 border-parchment-border dark:border-slate-700/80 hover:border-slate-400 dark:hover:border-slate-600 hover:bg-parchment/60 dark:hover:bg-slate-800 shadow-2xs'
                 }`}
               >
-                {/* Active Indicator Bar on left edge - visible ONLY on md+ screens */}
-                {isSelected && (
-                  <div className="hidden md:block absolute left-0 top-2 bottom-2 w-1 bg-carto-indigo rounded-r-md" />
-                )}
-
                 <div className="flex items-start justify-between gap-2 pl-1">
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-1.5 sm:gap-2 mb-1 flex-wrap">
@@ -452,7 +447,7 @@ export default function StateList({
                     <span className="text-[10px] font-sans px-2 py-0.5 rounded-md bg-parchment-subtle dark:bg-slate-700 text-ink dark:text-ink-dark border border-parchment-border dark:border-slate-600">
                       {districtCount} {districtCount === 1 ? (language === 'hi' ? 'जिला' : 'District') : (language === 'hi' ? 'जिले' : 'Districts')}
                     </span>
-                    <ChevronRight className={`w-4 h-4 transition-transform group-hover:translate-x-0.5 ${
+                    <ChevronRight className={`w-4 h-4 ${
                       isSelected ? 'text-carto-indigo dark:text-blue-400' : 'text-ink-muted'
                     }`} aria-hidden="true" />
                   </div>

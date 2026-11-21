@@ -145,7 +145,7 @@ export default function Header({
     <>
       <header 
         role="banner"
-        className={`sticky top-0 z-40 px-3 sm:px-6 flex items-center justify-between bg-parchment/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-parchment-border dark:border-slate-800 transition-all duration-200 ${
+        className={`sticky top-0 z-40 px-3 sm:px-6 flex items-center justify-between bg-parchment dark:bg-slate-900 border-b border-parchment-border dark:border-slate-800 transition-all duration-200 ${
           isScrolled ? 'h-13 shadow-xs' : 'h-14 shadow-2xs'
         }`}
       >

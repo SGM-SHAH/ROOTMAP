@@ -58,7 +58,7 @@ export function MethodologyModal({ isOpen, onClose }) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-900/50 backdrop-blur-xs animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-900/70 animate-in fade-in duration-150"
       role="dialog"
       aria-modal="true"
       aria-labelledby="methodology-modal-title"
@@ -226,7 +226,7 @@ export function ChangelogModal({ isOpen, onClose }) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-900/50 backdrop-blur-xs animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-900/70 animate-in fade-in duration-150"
       role="dialog"
       aria-modal="true"
       aria-labelledby="changelog-modal-title"
@@ -261,8 +261,7 @@ export function ChangelogModal({ isOpen, onClose }) {
 
         <div className="flex-1 overflow-y-auto p-5 sm:p-6 space-y-4 text-xs">
           {entries.map((entry, idx) => (
-            <div key={idx} className="p-4 rounded-xl bg-parchment dark:bg-slate-800/60 border border-parchment-border dark:border-slate-700 relative pl-4">
-              <div className="absolute left-0 top-3 bottom-3 w-1 bg-amber-600 rounded-r" />
+            <div key={idx} className="p-4 rounded-xl bg-parchment dark:bg-slate-800/60 border border-parchment-border dark:border-slate-700">
               <div className="flex items-center justify-between gap-2 mb-1">
                 <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800 px-2 py-0.5 rounded">
                   {entry.date}
@@ -316,7 +315,7 @@ export function ReportCorrectionModal({ isOpen, onClose, stateName: propState = 
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-900/50 backdrop-blur-xs animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-900/70 animate-in fade-in duration-150"
       role="dialog"
       aria-modal="true"
       aria-labelledby="report-modal-title"

@@ -271,7 +271,7 @@ export default function IndiaMapView({
       onPointerLeave={handlePointerUp}
     >
       {/* Top Left: Title & Survey of India Attribution (Solid Card preventing overlap with map) */}
-      <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-4 z-10 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xs p-2.5 px-3 rounded-xl border border-parchment-border dark:border-slate-800 shadow-2xs max-w-[200px] sm:max-w-md pointer-events-auto">
+      <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-4 z-10 bg-white dark:bg-slate-900 p-2.5 px-3 rounded-xl border border-parchment-border dark:border-slate-800 shadow-2xs max-w-[200px] sm:max-w-md pointer-events-auto">
         <span className="text-[9px] sm:text-[10px] font-sans tracking-widest uppercase text-carto-indigo dark:text-blue-400 font-bold block">
           Survey of India Reference
         </span>
@@ -289,7 +289,7 @@ export default function IndiaMapView({
         <button
           type="button"
           onClick={() => setShowTableView(prev => !prev)}
-          className="min-h-[38px] px-2.5 py-1 text-xs font-semibold rounded-lg bg-white/95 dark:bg-slate-800/95 border border-parchment-border dark:border-slate-700 text-ink dark:text-ink-dark flex items-center gap-1.5 shadow-2xs hover:bg-parchment transition-all focus-visible:ring-2 focus-visible:ring-carto-indigo"
+          className="min-h-[38px] px-2.5 py-1 text-xs font-semibold rounded-lg bg-white dark:bg-slate-800 border border-parchment-border dark:border-slate-700 text-ink dark:text-ink-dark flex items-center gap-1.5 shadow-2xs hover:bg-parchment transition-all focus-visible:ring-2 focus-visible:ring-carto-indigo"
           aria-label={showTableView ? "Switch back to graphical map view" : "View administrative data as an accessible table"}
         >
           <Table className="w-3.5 h-3.5 text-carto-indigo dark:text-blue-400" />
@@ -298,7 +298,7 @@ export default function IndiaMapView({
 
         {/* Color By Selector */}
         {!showTableView && (
-          <div className="flex items-center gap-1.5 bg-white/95 dark:bg-slate-800/95 backdrop-blur-xs px-2 py-1 rounded-lg border border-parchment-border dark:border-slate-700 shadow-2xs">
+          <div className="flex items-center gap-1.5 bg-white dark:bg-slate-800 px-2 py-1 rounded-lg border border-parchment-border dark:border-slate-700 shadow-2xs">
             <Layers className="w-3.5 h-3.5 text-carto-indigo dark:text-blue-400 shrink-0" aria-hidden="true" />
             <label htmlFor="color-by-selector" className="text-[10px] font-semibold text-ink-muted shrink-0 hidden xs:inline">
               {language === 'hi' ? 'रंग आधार:' : 'Color by:'}
@@ -320,7 +320,7 @@ export default function IndiaMapView({
 
         {/* Zoom & Reset Controls */}
         {!showTableView && (
-          <div className="flex items-center gap-1 bg-white/95 dark:bg-slate-800/95 backdrop-blur-xs p-1 rounded-lg border border-parchment-border dark:border-slate-700 shadow-2xs">
+          <div className="flex items-center gap-1 bg-white dark:bg-slate-800 p-1 rounded-lg border border-parchment-border dark:border-slate-700 shadow-2xs">
             <button
               type="button"
               onClick={() => handleZoom(0.25)}
@@ -556,7 +556,7 @@ export default function IndiaMapView({
       )}
 
       {/* Floating Dynamic Legend */}
-      <div className="absolute bottom-12 left-3 sm:left-4 z-10 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xs p-2.5 rounded-xl border border-parchment-border dark:border-slate-700 shadow-2xs text-[11px] max-w-[210px] hidden sm:block">
+      <div className="absolute bottom-12 left-3 sm:left-4 z-10 bg-white dark:bg-slate-900 p-2.5 rounded-xl border border-parchment-border dark:border-slate-700 shadow-2xs text-[11px] max-w-[210px] hidden sm:block">
         <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-ink-muted block mb-1.5">
           {colorBy === 'alliance' ? (language === 'hi' ? 'गठबंधन' : 'Alliance') :
            colorBy === 'population' ? (language === 'hi' ? 'जनसंख्या (Census 2011)' : 'Population') :
@@ -661,7 +661,7 @@ export default function IndiaMapView({
       </div>
 
       {/* Union Territories Insets Box */}
-      <div className="absolute bottom-12 right-3 sm:right-4 z-10 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xs p-2.5 rounded-xl border border-parchment-border dark:border-slate-700 shadow-2xs text-[11px] max-w-[230px]">
+      <div className="absolute bottom-12 right-3 sm:right-4 z-10 bg-white dark:bg-slate-900 p-2.5 rounded-xl border border-parchment-border dark:border-slate-700 shadow-2xs text-[11px] max-w-[230px]">
         <div className="flex items-center justify-between gap-1 mb-1.5">
           <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-ink-muted">
             {language === 'hi' ? 'केंद्र शासित प्रदेश' : 'UT Insets'}
@@ -703,7 +703,7 @@ export default function IndiaMapView({
       {/* Cartographic Floating Hover Tooltip */}
       {hoveredState && (
         <div
-          className="fixed z-50 pointer-events-none p-3 rounded-xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-parchment-border dark:border-slate-700 shadow-card text-xs min-w-[220px]"
+          className="fixed z-50 pointer-events-none p-3 rounded-xl bg-white dark:bg-slate-900 border border-parchment-border dark:border-slate-700 shadow-card text-xs min-w-[220px]"
           style={{
             left: `${Math.min(tooltipPos.x + 16, window.innerWidth - 240)}px`,
             top: `${Math.max(tooltipPos.y - 60, 20)}px`
@@ -724,39 +724,36 @@ export default function IndiaMapView({
 
           <div className="space-y-1.5 mt-2 text-[11px] text-ink dark:text-slate-200">
             {/* Capital */}
-            <div className="flex items-center gap-1.5">
-              <Building2 className="w-3 h-3 text-amber-500 shrink-0" aria-hidden="true" />
-              <span>Capital: <strong>{language === 'hi' && hoveredState.hindi?.capital ? hoveredState.hindi.capital : hoveredState.capital}</strong></span>
+            <div>
+              <span className="text-ink-muted">Capital: </span>
+              <strong>{language === 'hi' && hoveredState.hindi?.capital ? hoveredState.hindi.capital : hoveredState.capital}</strong>
             </div>
 
             {/* CM or Administrator */}
-            <div className="flex items-center gap-1.5">
-              <Award className="w-3 h-3 text-carto-gold shrink-0" aria-hidden="true" />
-              <span>
+            <div>
+              <span className="text-ink-muted">
                 {hoveredState.chiefMinister?.name 
                   ? `CM: ` 
                   : (hoveredState.governor?.title ? `${hoveredState.governor.title}: ` : 'Administrator: ')}
-                <strong>
-                  {hoveredState.chiefMinister?.name || hoveredState.governor?.name || 'Administrator'}
-                </strong>
               </span>
+              <strong>
+                {hoveredState.chiefMinister?.name || hoveredState.governor?.name || 'Administrator'}
+              </strong>
             </div>
 
             {/* Ruling Party & Alliance */}
-            <div className="flex items-center gap-1.5">
-              <Shield className="w-3 h-3 text-carto-indigo dark:text-blue-400 shrink-0" aria-hidden="true" />
-              <span>
-                Party: <strong>{hoveredState.rulingParty?.abbr || hoveredState.rulingParty?.name || 'Admin'}</strong>
-                {hoveredState.rulingAlliance && (
-                  <span className="text-ink-muted ml-1">({hoveredState.rulingAlliance})</span>
-                )}
-              </span>
+            <div>
+              <span className="text-ink-muted">Party: </span>
+              <strong>{hoveredState.rulingParty?.abbr || hoveredState.rulingParty?.name || 'Admin'}</strong>
+              {hoveredState.rulingAlliance && (
+                <span className="text-ink-muted ml-1">({hoveredState.rulingAlliance})</span>
+              )}
             </div>
 
             {/* Districts Count */}
-            <div className="flex items-center gap-1.5">
-              <MapPin className="w-3 h-3 text-emerald-600 shrink-0" aria-hidden="true" />
-              <span>Districts: <strong>{hoveredState.districts?.length || hoveredState.demographics?.totalDistricts || 0}</strong></span>
+            <div>
+              <span className="text-ink-muted">Districts: </span>
+              <strong>{hoveredState.districts?.length || hoveredState.demographics?.totalDistricts || 0}</strong>
             </div>
           </div>
         </div>
@@ -764,7 +761,7 @@ export default function IndiaMapView({
 
       {/* Bottom Hint */}
       <div className="absolute bottom-2 text-center pointer-events-none">
-        <span className="text-[10px] font-sans font-medium text-ink-muted dark:text-ink-dark-muted bg-white/80 dark:bg-slate-800/80 backdrop-blur-xs px-2.5 py-1 rounded-md border border-parchment-border dark:border-slate-700">
+        <span className="text-[10px] font-sans font-medium text-ink-muted dark:text-ink-dark-muted bg-white dark:bg-slate-800 px-2.5 py-1 rounded-md border border-parchment-border dark:border-slate-700">
           {actionVerb} {language === 'hi' ? 'करके प्रशासनिक विवरण देखें' : 'any state or territory to open civic dossier'}
         </span>
       </div>

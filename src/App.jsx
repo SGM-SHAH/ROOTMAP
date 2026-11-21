@@ -424,7 +424,7 @@ export default function App() {
 
                 {/* Mobile Floating Preview Card for Map View */}
                 {selectedItem && !isMobileMapPreviewDismissed && (
-                  <div className="md:hidden absolute left-3 right-3 bottom-16 z-30 p-3 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-parchment-border dark:border-slate-800 rounded-2xl shadow-float animate-in slide-in-from-bottom-2 duration-200">
+                  <div className="md:hidden absolute left-3 right-3 bottom-16 z-30 p-3 bg-white dark:bg-slate-900 border border-parchment-border dark:border-slate-800 rounded-2xl shadow-float animate-in slide-in-from-bottom-2 duration-200">
                     <div className="flex items-start justify-between gap-2 mb-1.5">
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-1.5 flex-wrap">

@@ -37,7 +37,7 @@ export default function CompareModal({ isOpen, onClose, allItems, initialStates 
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-900/50 backdrop-blur-xs animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-900/70 animate-in fade-in duration-150"
       role="dialog"
       aria-modal="true"
       aria-labelledby="compare-modal-title"

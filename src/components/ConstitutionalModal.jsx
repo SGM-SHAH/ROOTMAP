@@ -6,7 +6,7 @@ export default function ConstitutionalModal({ isOpen, onClose }) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-xs animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 animate-in fade-in duration-200"
       role="dialog"
       aria-modal="true"
       aria-labelledby="constitutional-modal-title"
@@ -65,8 +65,8 @@ export default function ConstitutionalModal({ isOpen, onClose }) {
             </div>
           </div>
 
-          {/* Three Lists Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Three Lists - Editorial Sequential Layout */}
+          <div className="space-y-3">
             {/* List 1 */}
             <div className="p-4 rounded-xl bg-amber-50/60 border border-amber-200/90 shadow-2xs">
               <div className="flex items-center gap-2 mb-2.5">

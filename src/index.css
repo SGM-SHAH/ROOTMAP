@@ -18,18 +18,25 @@
   }
 }
 
-/* Institutional Clean Light Panels & Cards */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid #E2E8F0;
+/* Institutional Clean Surfaces */
+.card-surface {
+  background: #FFFFFF;
+  border: 1px solid #E2DDD3;
 }
 
-.glass-card {
+.dark .card-surface {
+  background: #1E293B;
+  border-color: #334155;
+}
+
+.panel-surface {
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E2DDD3;
+}
+
+.dark .panel-surface {
+  background: #0F172A;
+  border-color: #334155;
 }
 
 /* Standard Functional Scrollbars for Light Theme */
